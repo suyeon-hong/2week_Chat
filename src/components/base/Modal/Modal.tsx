@@ -1,23 +1,24 @@
 import ReactDOM from 'react-dom';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import './Style.scss';
 import { UserData } from '@types';
+import useModal from '@components/hooks/useModal';
 
 const mokData = [
   {
-    userId: 1,
+    userId: '1',
     userName: '김땡땡',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
   },
   {
-    userId: 2,
+    userId: '2',
     userName: '김땡땡',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
   },
   {
-    userId: 3,
+    userId: '3',
     userName: '김땡땡',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
@@ -27,36 +28,32 @@ const mokData = [
 const $portal = document.querySelector('#modal-root');
 
 interface ModalProps {
-  userId: number;
+  userId: string;
   content: string;
 }
 
 const Modal = ({ userId, content }: ModalProps) => {
-  const [isShowing, setIsShowing] = useState<boolean>(true);
   const [data, setData] = useState<UserData[]>(mokData);
+  const { isShowing, toggle: close } = useModal(true);
 
   let userContent = content;
-
   if (userContent.length > 10) {
     userContent = userContent.substring(0, 11) + '...';
   }
 
-  const onRemove = (): void => {
+  const onRemove = (event: MouseEvent) => {
     setData((data) => data.filter((data) => data.userId !== userId));
-    setIsShowing(!isShowing);
-  };
-
-  const close = (): void => {
-    setIsShowing(!isShowing);
+    close(event);
   };
 
   return isShowing && $portal
     ? ReactDOM.createPortal(
-        <div className="modalBg">
+        <div className="modalContainer" onClick={close}>
           <div className="modalBox">
             <h1>'{userContent}' 메시지를 삭제하시겠습니까?</h1>
-            <button onClick={onRemove}>삭제</button>
-            <button onClick={close}>취소</button>
+            <button className="deleteBtn" onClick={onRemove}>
+              삭제
+            </button>
           </div>
         </div>,
         $portal

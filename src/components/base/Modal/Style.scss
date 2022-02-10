@@ -1,4 +1,4 @@
-.modalBg{
+.modalContainer{
 	width: 100%;
 	height: 100vh;
 	background: rgba(0,0,0,0.2);
@@ -10,6 +10,8 @@
 	background: #fff;
 	border-radius: 10px;
 	@include pos-center;
+	position: relative;
+	z-index: 10;
 
 	h1{
 		@include font();
