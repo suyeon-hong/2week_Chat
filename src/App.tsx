@@ -1,12 +1,14 @@
-import '@styles/index.scss';
-import ChatContainer from '@components/domain/ChatContainer/ChatContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Chats, Login } from '@pages';
 
 function App() {
   return (
-    <>
-      <ChatContainer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Chats />}></Route>
+        <Route path="login" element={<Login />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
 
 export default App;

@@ -1,0 +1,35 @@
+.loginForm {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	.formInner {
+		@include pos-center;
+		@include flexbox($fd: column);
+		top: 40%;
+		width: 100%;
+		height: 100%;
+		padding: $BASE_GAP;
+
+		p {
+			text-align: center;
+			padding: $BASE_GAP 0;
+			user-select: none;
+		}
+
+		.loginInput {
+			width: 100%;
+			height: 40px;
+		}
+
+		.loginBtn {
+			padding: 5px;
+			border: 1px solid;
+			margin-top: $BASE_GAP * 2;
+
+			&:hover {
+				background-color: $blue;
+			}
+		}
+	}
+}
