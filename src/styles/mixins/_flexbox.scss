@@ -14,8 +14,9 @@ $flexmap: (
   @return map.get($flexmap, $key);
 }
 
-@mixin flexbox($display: flex, $jc: center, $ai: center) {
+@mixin flexbox($display: flex, $fd: row, $jc: center, $ai: center) {
   display: $display;
+  flex-direction: $fd;
   justify-content: get-flex-value($jc);
   align-items: get-flex-value($ai);
 }
