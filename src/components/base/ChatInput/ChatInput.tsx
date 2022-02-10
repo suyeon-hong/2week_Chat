@@ -4,9 +4,8 @@ import { InputEventType, KeyCodeType } from '@$types/EventTypes';
 
 const dummy = {
   userId: 1,
-  userName: '과제를',
-  content:
-    '이렇게 성의 없게 내면 과제를 하고 싶은 마음이 들겠습니까? 입장을 바꿔서 생각해보세요',
+  userName: '드디어 리덕스를 쓴다',
+  content: '너무 설레고 재미있다',
   date: new Date(),
 };
 
