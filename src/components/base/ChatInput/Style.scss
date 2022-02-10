@@ -1,9 +1,5 @@
-@use '@styles/mixins/flexbox';
-@use '@styles/constants/colors';
-@use '@styles/mixins/font';
-
 .ChatInput-wrapper{
-  @include flexbox.flexbox();
+  @include flexbox();
   flex-direction: column;
   border: 1px solid black;
   width: 500px;
@@ -11,10 +7,10 @@
   .reply-container{
     position: relative;
     width: 100%;
-    border-bottom: 1px colors.$gray solid;
+    border-bottom: 1px $gray solid;
     padding: 8px;
     h5{
-      @include font.font($sz: 14px, $color: colors.$blue-light);
+      @include font($sz: 14px, $color: $blue-light);
     }
     .reply-content{
       font-size: 14px;

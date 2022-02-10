@@ -1,8 +1,12 @@
-import Test from '@components/Test/Test';
 import '@styles/index.scss';
+import ChatContainer from '@components/domain/ChatContainer/ChatContainer';
 
 function App() {
-  return <Test />;
+  return (
+    <>
+      <ChatContainer />
+    </>
+  );
 }
 
 export default App;
