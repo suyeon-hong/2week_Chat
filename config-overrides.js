@@ -10,7 +10,7 @@ module.exports = override(
     '@hooks': path.resolve(__dirname, 'src/hooks'),
     '@styles': path.resolve(__dirname, 'src/styles'),
     '@utils': path.resolve(__dirname, 'src/utils'),
-    '@types': path.resolve(__dirname, 'src/types'),
+    '@$types': path.resolve(__dirname, 'src/types'),
     '@redux': path.resolve(__dirname, 'src/redux'),
     '@models': path.resolve(__dirname, 'src/models'),
   })
