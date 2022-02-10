@@ -1,0 +1,38 @@
+.ChatInput-wrapper{
+  @include flexbox();
+  flex-direction: column;
+  border: 1px solid black;
+  width: 500px;
+  height: 100px;
+  .reply-container{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px $gray solid;
+    padding: 8px;
+    h5{
+      @include font($sz: 14px, $color: $blue-light);
+    }
+    .reply-content{
+      font-size: 14px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      width: 400px;
+    }
+    .close-button{
+      position: absolute;
+      right: 10px;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+  textarea{
+    padding: 8px;
+    width: 500px;
+    height: 100px;
+    border: none;
+    border-right: black solid 1px;
+    border-left: black solid 1px;
+    resize: none;
+  }
+}

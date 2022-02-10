@@ -1,0 +1,15 @@
+
+.SubmitButton-wrapper{
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: default;
+  background: $gray;
+  color: $tertiary;
+  &.active{
+    background: #ffffff;
+    color: black;
+    cursor: pointer;
+  }
+}

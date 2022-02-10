@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
 			"@*": ["src/*"],
 			"@assets/*": ["src/assets/*"],
@@ -9,9 +9,9 @@
 			"@hooks/*": ["src/hooks/*"],
 			"@styles/*": ["src/styles/*"],
 			"@utils/*": ["src/utils/*"],
-			"@types/*": ["src/types/*"],
 			"@redux/*": ["src/redux/*"],
 			"@models/*": ["src/models/*"],
+			"@$types/*": ["src/types/*"],
 		},
 	},
 }
