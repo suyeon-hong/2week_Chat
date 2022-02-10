@@ -1,8 +1,12 @@
-import Test from '@components/Test/Test';
 import '@styles/index.scss';
+import { Modal } from '@components/base';
 
 function App() {
-  return <Test />;
+  return (
+    <>
+      <Modal />
+    </>
+  );
 }
 
 export default App;
