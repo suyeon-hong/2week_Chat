@@ -1,8 +1,7 @@
-import Test from '@components/Test/Test';
 import '@styles/index.scss';
 
 function App() {
-  return <Test />;
+  return <></>;
 }
 
 export default App;
