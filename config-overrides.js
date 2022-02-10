@@ -1,4 +1,8 @@
-const { override, addWebpackAlias } = require('customize-cra');
+const {
+  override,
+  addWebpackAlias,
+  adjustStyleLoaders,
+} = require('customize-cra');
 const path = require('path');
 
 module.exports = override(
@@ -13,5 +17,21 @@ module.exports = override(
     '@types': path.resolve(__dirname, 'src/types'),
     '@redux': path.resolve(__dirname, 'src/redux'),
     '@models': path.resolve(__dirname, 'src/models'),
+  }),
+  adjustStyleLoaders((rule) => {
+    if (rule.test.toString().includes('scss')) {
+      rule.use.push({
+        loader: require.resolve('sass-resources-loader'),
+        options: {
+          resources: [
+            './src/styles/constants/_colors.scss',
+            './src/styles/constants/_sizes.scss',
+            './src/styles/mixins/_flexbox.scss',
+            './src/styles/mixins/_font.scss',
+            './src/styles/mixins/_position.scss',
+          ],
+        },
+      });
+    }
   })
 );
