@@ -1,4 +1,6 @@
-@mixin font($sz: 16px, $lh: 1.5, $fw: 400, $ls: 0em, $color: $primary) {
+@use '../constants/colors';
+
+@mixin font($sz: 16px, $lh: 1.5, $fw: 400, $ls: 0em, $color: colors.$primary) {
   font-size: $sz;
   line-height: $lh;
   font-weight: $fw;
