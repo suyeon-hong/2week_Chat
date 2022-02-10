@@ -7,8 +7,9 @@
 .modalBox{
 	width: 300px;
 	padding: 20px;
-	background: #eee;
+	background: #fff;
 	border-radius: 10px;
+	@include pos-center;
 
 	h1{
 		@include font();
