@@ -1,10 +1,9 @@
 .homeWrapper{
 	position: relative;
   width: 100%;
-	height: 100vh;
   padding: 30px 15px;
 
-  .messagesListContainer{
+  .messagesContainer{
     border: 1px solid $border;
     width: 100%;
     min-height: 500px;

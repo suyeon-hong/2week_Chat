@@ -15,14 +15,14 @@ const MessagesBox = ({
   handleReply,
 }: MessagesBoxProps) => {
   return (
-    <div className="list" key={message.chatId}>
-      <div>
+    <div className="messageBox" key={message.chatId}>
+      <div className="message">
         <Profile userId={message.userId} />
-        <div>
-          <div>
+        <div className="content">
+          <p className="nameDate">
             {message.userName} {message.date}
-          </div>
-          <div>{message.content}</div>
+          </p>
+          <p className="content">{message.content}</p>
         </div>
       </div>
       <Buttons

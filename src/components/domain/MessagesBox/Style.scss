@@ -1,30 +1,27 @@
-.list {
+.messageBox {
   @include flexbox();
   border-bottom: 1px solid $border;
-  
-  :first-child{
-    display: flex;
-    flex: 4;
 
-    :first-child{
-      flex: 1;
-      :nth-child(1){
-        padding: 5px;
-      }
-    }
-    :last-child{
-      flex: 7;
+  .message{
+    display: flex;
+    width: 75%;
+
+    .content{
+      width: 100%;
+      padding: 0 5% 0 2%;
       border-right: 1px solid $border;
-      :nth-child(1){
+
+      .nameDate{
         margin: 5px 10px;
       }
-      :nth-child(2){
+      .content{
         background-color: $gray;
         margin: 5px 10px;
       }
     }
   }
-  :last-child{
-    flex: 1;
+  
+  .button-wrapper{
+    width: 25%;
   }
 }

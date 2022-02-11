@@ -25,7 +25,7 @@ const Chats = () => {
 
   return (
     <div className="homeWrapper">
-      <div className="messagesListContainer">
+      <div className="messagesContainer">
         {React.Children.toArray(
           messages.map((message) => (
             <MessagesBox
