@@ -1,6 +1,18 @@
 .messageBox {
   @include flexbox();
+  border-top: 1px solid $border;
   border-bottom: 1px solid $border;
+  margin: $BASE_GAP * 2 0;
+
+  &:first-of-type {
+    border-top: none;
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
 
   .messageInner{
     display: flex;
