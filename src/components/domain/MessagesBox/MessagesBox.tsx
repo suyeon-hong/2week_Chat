@@ -1,19 +1,16 @@
-import { IMessageData } from '@$types/MessageData';
-import { Profile, Buttons } from '@components/base';
+import { Profile, Buttons, Modal } from '@components/base';
+import useModal from '@components/hooks/useModal';
 import { getFormattedDate } from '@utils/functions';
 import './Style.scss';
 
 interface MessagesBoxProps {
   message: IMessageData;
-  handleDeleteModal(e: React.MouseEvent<HTMLButtonElement>): void;
   handleReply(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const MessagesBox = ({
-  message,
-  handleDeleteModal,
-  handleReply,
-}: MessagesBoxProps) => {
+const MessagesBox = ({ message, handleReply }: MessagesBoxProps) => {
+  const { isShowing, toggle: close } = useModal(false);
+
   return (
     <div className="messageBox">
       <div className="messageInner">
@@ -26,9 +23,12 @@ const MessagesBox = ({
           <p className="message">{message.content}</p>
         </div>
       </div>
-      <Buttons
-        handleDeleteModal={handleDeleteModal}
-        handleReply={handleReply}
+      <Buttons handleDeleteModal={close} handleReply={handleReply} />
+      <Modal
+        chatId={message.chatId}
+        content={message.content}
+        isShowing={isShowing}
+        close={close}
       />
     </div>
   );

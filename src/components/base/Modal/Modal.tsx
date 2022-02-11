@@ -1,24 +1,30 @@
 import ReactDOM from 'react-dom';
 import { MouseEvent, useState } from 'react';
 import './Style.scss';
-import { UserData } from '@types';
+import { IMessageData } from '@$types/MessageData';
 
 const mokData = [
   {
+    chatId: '1',
     userId: '1',
     userName: '김땡땡',
+    profileImage: '',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
   },
   {
+    chatId: '2',
     userId: '2',
     userName: '김땡땡',
+    profileImage: '',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
   },
   {
+    chatId: '3',
     userId: '3',
     userName: '김땡땡',
+    profileImage: '',
     content: '타입스크립트로 메신저 만들기',
     date: new Date(),
   },
@@ -27,14 +33,14 @@ const mokData = [
 const $portal = document.querySelector('#modal-root');
 
 interface ModalProps {
-  userId: string;
+  chatId: string;
   content: string;
   isShowing: boolean;
   close(event: MouseEvent): void;
 }
 
-const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
-  const [data, setData] = useState<UserData[]>(mokData);
+const Modal = ({ chatId, content, isShowing, close }: ModalProps) => {
+  const [data, setData] = useState<IMessageData[]>(mokData);
 
   let userContent = content;
   if (userContent.length > 10) {
@@ -42,7 +48,8 @@ const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
   }
 
   const onRemove = (event: MouseEvent) => {
-    setData((data) => data.filter((data) => data.userId !== userId));
+    setData((data) => data.filter((data) => data.chatId !== chatId));
+    console.log(`remove chatId : ${chatId}`);
     close(event);
   };
 

@@ -53,9 +53,6 @@ const messages = [
 ];
 
 const Chats = () => {
-  function handleDeleteModal() {
-    console.log('handleDeleteModal');
-  }
   function handleReply() {
     console.log('handleReply');
   }
@@ -72,7 +69,6 @@ const Chats = () => {
           messages.map((message) => (
             <MessagesBox
               message={message}
-              handleDeleteModal={handleDeleteModal}
               handleReply={handleReply}
             />
           ))
