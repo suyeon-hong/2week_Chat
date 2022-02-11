@@ -17,6 +17,7 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
   const dispatch = useTypedDispatch();
   const { content, chatId, date } = message;
   const { userId, username } = message.user;
+
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="messageInner">
