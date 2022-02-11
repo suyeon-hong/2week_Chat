@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import { MouseEvent, useState } from 'react';
 import './Style.scss';
-import { IMessageData } from '@models/MessageData';
+import { IMessageData } from '@$types/MessageData';
 
 const mokData = [
   {

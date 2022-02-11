@@ -1,6 +1,6 @@
 import { Profile, Buttons, Modal } from '@components/base';
 import useModal from '@components/hooks/useModal';
-import { IMessageData } from '@models/MessageData';
+import { IMessageData } from '@$types/MessageData';
 
 import './Style.scss';
 
