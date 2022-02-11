@@ -1,4 +1,4 @@
-import { Action, ActionType } from '../actions/userTypes';
+import { Action, ActionType } from '../actions/userActions';
 
 export interface UserState {
   username: string;
