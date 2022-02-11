@@ -30,9 +30,12 @@ const Modal = ({ chatId, content, isShowing, close }: ModalProps) => {
         <div className="modalContainer" onClick={close}>
           <div className="modalBox">
             <h1>'{userContent}' 메시지를 삭제하시겠습니까?</h1>
-            <button className="deleteBtn" onClick={onRemove}>
-              삭제
-            </button>
+            <div className="buttonWrapper">
+              <button className="deleteBtn" onClick={onRemove}>
+                삭제
+              </button>
+              <button onClick={close}>취소</button>
+            </div>
           </div>
         </div>,
         $portal
