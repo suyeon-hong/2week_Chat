@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import { MouseEvent, useState } from 'react';
 import './Style.scss';
 import { UserData } from '@types';
-import useModal from '@components/hooks/useModal';
 
 const mokData = [
   {
@@ -30,11 +29,12 @@ const $portal = document.querySelector('#modal-root');
 interface ModalProps {
   userId: string;
   content: string;
+  isShowing: boolean;
+  close(event: MouseEvent): void;
 }
 
-const Modal = ({ userId, content }: ModalProps) => {
+const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
   const [data, setData] = useState<UserData[]>(mokData);
-  const { isShowing, toggle: close } = useModal(true);
 
   let userContent = content;
   if (userContent.length > 10) {
