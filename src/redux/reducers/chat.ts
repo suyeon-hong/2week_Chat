@@ -10,34 +10,56 @@ const initialState: ChatState = {
   chatList: [
     {
       chatId: '1',
-      profileImage: '123',
-      content: '1',
+      profileImage: '121',
+      content: '환영합니다.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '3',
+        username: '김예림',
       },
       replyId: null,
     },
     {
       chatId: '2',
-      profileImage: '123',
-      content: '123',
+      profileImage: '113',
+      content: '반갑니다.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '4',
+        username: '고병표',
       },
       replyId: null,
     },
     {
       chatId: '3',
-      profileImage: '123',
-      content: '123',
+      profileImage: '555',
+      content: '안녕하세요.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '5',
+        username: '김지영',
+      },
+      replyId: null,
+    },
+    {
+      chatId: '4',
+      profileImage: '2',
+      content: '.',
+      date: new Date(),
+      user: {
+        userId: '6',
+        username: '유제호',
+      },
+      replyId: null,
+    },
+    {
+      chatId: '5',
+      profileImage: '40',
+      content: 'Hello',
+      date: new Date(),
+      user: {
+        userId: '22',
+        username: '홍수연',
       },
       replyId: null,
     },
@@ -45,7 +67,7 @@ const initialState: ChatState = {
   replyMessage: null,
 };
 
-let chatId = 4;
+let chatId = 6;
 
 export const chatReducer = (
   state = initialState,
