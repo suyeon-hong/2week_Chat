@@ -20,7 +20,7 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
   const { userId, username } = message.user;
   return (
     <div className="messageBox" key={message.chatId}>
-      <div className="message">
+      <div className="messageInner">
         <Profile userId={userId} />
         <div className="content">
           <p className="nameDate">
@@ -29,7 +29,7 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
             </strong>
             <span className="date"> {getFormattedDate(date)}</span>
           </p>
-          <p className="content">{content}</p>
+          <p className="message">{content}</p>
         </div>
       </div>
       <Buttons
