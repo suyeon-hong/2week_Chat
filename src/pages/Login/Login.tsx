@@ -1,6 +1,6 @@
 import { useInput, useTypedDispatch } from '@hooks';
 import './Style.scss';
-import { loginUser } from '@redux/actions/userTypes';
+import { loginUser } from '@redux/actions/userActions';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {

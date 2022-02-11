@@ -2,6 +2,8 @@ import { Profile, Buttons } from '@components/base';
 import { IMessageData } from '@models/MessageData';
 
 import './Style.scss';
+import Modal from '../../base/Modal/Modal';
+import useModal from '@components/hooks/useModal';
 
 interface MessagesBoxProps {
   message: IMessageData;
@@ -14,6 +16,9 @@ const MessagesBox = ({
   handleDeleteModal,
   handleReply,
 }: MessagesBoxProps) => {
+  const { isShowing, toggle } = useModal(false);
+
+  const { content, chatId, date } = message;
   const { userId, username } = message.user;
   return (
     <div className="messageBox" key={message.chatId}>
@@ -21,9 +26,9 @@ const MessagesBox = ({
         <Profile userId={userId} />
         <div className="content">
           <p className="nameDate">
-            {username} {message.date}
+            {username} {date.toString()}
           </p>
-          <p className="content">{message.content}</p>
+          <p className="content">{content}</p>
         </div>
       </div>
       <Buttons

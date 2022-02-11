@@ -1,21 +1,16 @@
 import React from 'react';
 import './Style.scss';
 
-import { MessagesBox, ChatContainer } from '@components/domain';
-
-// @NOTE: dummy data
-const messages = [
-  {
-    chatId: '123',
-    userId: '1',
-    userName: '12',
-    profileImage: '123',
-    content: '123',
-    date: '123',
-  },
-];
+import { MessagesBox, ChatInputContainer } from '@components/domain';
+import { RootReducerType } from '@redux/reducers/RootReducer';
+import { useSelector } from 'react-redux';
+import { ChatState } from '@redux/reducers/chat';
 
 const Chats = () => {
+  const { chatList } = useSelector<RootReducerType>(
+    ({ chat }) => chat
+  ) as ChatState;
+
   function handleDeleteModal() {
     console.log('handleDeleteModal');
   }
@@ -27,7 +22,7 @@ const Chats = () => {
     <div className="homeWrapper">
       <div className="messagesContainer">
         {React.Children.toArray(
-          messages.map((message) => (
+          chatList.map((message) => (
             <MessagesBox
               key={message.chatId}
               message={message}
@@ -38,7 +33,7 @@ const Chats = () => {
         )}
       </div>
       <div className="inputBoxContainer">
-        <ChatContainer />
+        <ChatInputContainer />
       </div>
     </div>
   );
