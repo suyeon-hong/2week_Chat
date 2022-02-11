@@ -1,6 +1,5 @@
 import { Profile, Buttons } from '@components/base';
-import { IMessageData } from '@models/MessageData';
-
+import { IMessageData } from '@$types/MessageData';
 import './Style.scss';
 
 interface MessagesBoxProps {
