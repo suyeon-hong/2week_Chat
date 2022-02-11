@@ -1,47 +1,27 @@
 import ReactDOM from 'react-dom';
-import { MouseEvent, useState } from 'react';
+import { MouseEvent } from 'react';
 import './Style.scss';
-
-const mokData = [
-  {
-    userId: '1',
-    userName: '김땡땡',
-    content: '타입스크립트로 메신저 만들기',
-    date: new Date(),
-  },
-  {
-    userId: '2',
-    userName: '김땡땡',
-    content: '타입스크립트로 메신저 만들기',
-    date: new Date(),
-  },
-  {
-    userId: '3',
-    userName: '김땡땡',
-    content: '타입스크립트로 메신저 만들기',
-    date: new Date(),
-  },
-];
+import { useTypedDispatch } from '@hooks';
+import { removeChat } from '@redux/actions/chatActions';
 
 const $portal = document.querySelector('#modal-root');
 
 interface ModalProps {
-  userId: string;
+  chatId: string;
   content: string;
   isShowing: boolean;
   close(event: MouseEvent): void;
 }
 
-const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
-  // const [data, setData] = useState<UserData[]>(mokData);
-
+const Modal = ({ chatId, content, isShowing, close }: ModalProps) => {
+  const dispatch = useTypedDispatch();
   let userContent = content;
   if (userContent.length > 10) {
     userContent = userContent.substring(0, 11) + '...';
   }
 
   const onRemove = (event: MouseEvent) => {
-    // setData((data) => data.filter((data) => data.userId !== userId));
+    dispatch(removeChat(chatId));
     close(event);
   };
 

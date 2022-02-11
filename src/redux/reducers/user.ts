@@ -6,8 +6,8 @@ export interface UserState {
 }
 
 const initialState = {
-  username: '',
-  userId: null,
+  username: '비로그인입니다',
+  userId: '199999999',
 };
 
 export const userReducer = (

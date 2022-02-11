@@ -14,11 +14,11 @@ export const addChat = (
 };
 
 export const removeChat = (chatId: string) => {
-  return { type: ActionType.ADD_CHAT, payload: chatId };
+  return { type: ActionType.DELETE_CHAT, payload: chatId };
 };
 
-export const setReply = (targetChat: IMessageData) => {
-  return { type: ActionType.ADD_CHAT, payload: targetChat };
+export const setReply = (targetChat: IMessageData | null) => {
+  return { type: ActionType.SET_REPLY_MODE, payload: targetChat };
 };
 
 export type ActionAddChat = ReturnType<typeof addChat>;

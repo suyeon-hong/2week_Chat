@@ -11,24 +11,12 @@ const Chats = () => {
     ({ chat }) => chat
   ) as ChatState;
 
-  function handleDeleteModal() {
-    console.log('handleDeleteModal');
-  }
-  function handleReply() {
-    console.log('handleReply');
-  }
-
   return (
     <div className="homeWrapper">
       <div className="messagesContainer">
         {React.Children.toArray(
           chatList.map((message) => (
-            <MessagesBox
-              key={message.chatId}
-              message={message}
-              handleDeleteModal={handleDeleteModal}
-              handleReply={handleReply}
-            />
+            <MessagesBox key={message.chatId} message={message} />
           ))
         )}
       </div>

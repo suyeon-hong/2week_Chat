@@ -1,13 +1,8 @@
 import './Style.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import { InputEventType, KeyCodeType } from '@types';
-
-const dummy = {
-  userId: 1,
-  userName: '드디어 리덕스를 쓴다',
-  content: '너무 설레고 재미있다',
-  date: new Date(),
-};
+import { useTypedDispatch, useTypedSelector } from '@hooks';
+import { setReply } from '@redux/actions/chatActions';
 
 interface ChatInputProps {
   inputValue: string;
@@ -16,9 +11,8 @@ interface ChatInputProps {
 }
 
 const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
-  const { userId, userName, content } = dummy;
-  const [replyMode, setReplyMode] = useState(true);
-  // 이상 redux로 대체할 상태값들
+  const { reply } = useTypedSelector(({ chat }) => chat);
+  const dispatch = useTypedDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { inputType } = e.nativeEvent as InputEvent;
@@ -28,7 +22,7 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
     setInputValue(e.target.value);
   };
   const handleClick = () => {
-    setReplyMode(false);
+    dispatch(setReply(null));
   };
   const handleKeyPress = (e: any) => {
     const isPressShift = e.shiftKey;
@@ -41,10 +35,6 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
       onSubmit();
       return;
     }
-    if (keyCode === KeyCodeType.ESC) {
-      setReplyMode(false);
-      return;
-    }
     if (isPressShift && keyCode === KeyCodeType.Enter) {
       setInputValue((prev) => prev + '\n');
     }
@@ -52,12 +42,12 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
 
   return (
     <div className={'ChatInput-wrapper'}>
-      {replyMode && (
+      {reply && (
         <div className={'reply-container'}>
           <h5>
-            '{userName}' <span className={'to-text'}>에게 답장</span>
+            '{reply.user.username}' <span className={'to-text'}>에게 답장</span>
           </h5>
-          <p className={'reply-content'}>{content}</p>
+          <p className={'reply-content'}>{reply.content}</p>
           <div className="close-button" onClick={handleClick}>
             x
           </div>

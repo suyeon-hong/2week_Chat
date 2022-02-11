@@ -61,15 +61,13 @@ export const chatReducer = (
         chatId: (chatId++).toString(),
         profileImage: undefined,
       };
-      console.log(state.chatList);
       return { ...state, chatList: [...state.chatList, nextMessage] };
     }
     case ActionType.DELETE_CHAT: {
       const nextChatList = state.chatList.filter(
         (message) => message.chatId !== payload
       );
-
-      return { ...state, ...nextChatList };
+      return { ...state, chatList: nextChatList };
     }
     case ActionType.SET_REPLY_MODE: {
       return { ...state, reply: payload as IMessageData };

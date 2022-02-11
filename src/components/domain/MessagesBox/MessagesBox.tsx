@@ -4,20 +4,16 @@ import { IMessageData } from '@models/MessageData';
 import './Style.scss';
 import Modal from '../../base/Modal/Modal';
 import useModal from '@components/hooks/useModal';
+import { useTypedDispatch } from '@hooks';
+import { setReply } from '@redux/actions/chatActions';
 
 interface MessagesBoxProps {
   message: IMessageData;
-  handleDeleteModal(e: React.MouseEvent<HTMLButtonElement>): void;
-  handleReply(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const MessagesBox = ({
-  message,
-  handleDeleteModal,
-  handleReply,
-}: MessagesBoxProps) => {
+const MessagesBox = ({ message }: MessagesBoxProps) => {
   const { isShowing, toggle } = useModal(false);
-
+  const dispatch = useTypedDispatch();
   const { content, chatId, date } = message;
   const { userId, username } = message.user;
   return (
@@ -32,8 +28,14 @@ const MessagesBox = ({
         </div>
       </div>
       <Buttons
-        handleDeleteModal={handleDeleteModal}
-        handleReply={handleReply}
+        handleDeleteModal={toggle}
+        handleReply={() => dispatch(setReply(message))}
+      />
+      <Modal
+        content={content}
+        chatId={chatId}
+        close={toggle}
+        isShowing={isShowing}
       />
     </div>
   );
