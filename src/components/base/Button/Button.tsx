@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, KeyboardEvent } from 'react';
 import './Style.scss';
 
 type size = 'btnSize75' | 'btnSize100';
