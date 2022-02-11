@@ -13,11 +13,11 @@
 		@include font;
 		margin: 0;
 	}
-	.other{
+	.otherMessage{
 		@include font($sz: 14px ,$color: $gray);
 		margin: 5px 0 10px;
 	}
-	.mine{
+	.myMessage{
 		@include font;
 		border-top: 1px solid $border;
 		padding-top: 10px;
