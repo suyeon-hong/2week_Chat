@@ -1,7 +1,6 @@
+import { IMessageData } from '@$types/MessageData';
 import { Profile, Buttons } from '@components/base';
-import { IMessageData } from '@models/MessageData';
 import { getFormattedDate } from '@utils/functions';
-
 import './Style.scss';
 
 interface MessagesBoxProps {

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Style.scss';
-
 import { MessagesBox, ChatContainer } from '@components/domain';
+import { IMessageData } from '@$types/MessageData';
+import './Style.scss';
 
 // @NOTE: dummy data
 const messages = [
@@ -23,6 +23,11 @@ const Chats = () => {
   function handleReply() {
     console.log('handleReply');
   }
+
+  messages.sort(
+    (a: IMessageData, b: IMessageData): number =>
+      +new Date(a.date) - +new Date(b.date)
+  );
 
   return (
     <div className="homeWrapper">
