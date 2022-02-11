@@ -4,7 +4,7 @@ import './Style.scss';
 import { Modal } from '@components/base';
 import { useTypedDispatch, useTypedSelector, useModal } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
-import { IMessageData } from '@types/MessageData';
+import { IMessageData } from '@models/MessageData';
 import { getFormattedDate } from '@utils/functions';
 
 interface MessagesBoxProps {

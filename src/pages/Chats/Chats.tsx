@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import './Style.scss';
 
 import { MessagesBox, ChatInputContainer } from '@components/domain';
 import { RootReducerType } from '@redux/reducers/RootReducer';
 import { useSelector } from 'react-redux';
 import { ChatState } from '@redux/reducers/chat';
-import { IMessageData } from '@types/MessageData';
+import { IMessageData } from '@models/MessageData';
 import { useScrollToBottom } from '@hooks';
 
 const Chats = () => {

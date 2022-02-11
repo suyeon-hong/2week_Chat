@@ -2,7 +2,7 @@ import './Style.scss';
 import React from 'react';
 import { useTypedDispatch, useTypedSelector } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
-import { InputEventType, KeyCodeType } from '@types/EventTypes';
+import { InputEventType, KeyCodeType } from '@models/EventTypes';
 
 interface ChatInputProps {
   inputValue: string;
