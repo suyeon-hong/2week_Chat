@@ -7,12 +7,21 @@ interface Props {
   size: size;
   children: string;
   onClick(e: React.MouseEvent<HTMLButtonElement>): void;
+  onKeyDown?: () => void;
 }
 
-const Button = ({ size, children, onClick }: Props): ReactElement => {
+const Button = ({
+  size,
+  children,
+  onClick,
+  onKeyDown,
+}: Props): ReactElement => {
   return (
     <>
-      <button className={`message-button ${size}`} onClick={onClick}>
+      <button
+        className={`message-button ${size}`}
+        onKeyDown={onKeyDown}
+        onClick={onClick}>
         {children}
       </button>
     </>

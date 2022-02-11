@@ -7,6 +7,7 @@ import { useTypedDispatch, useTypedSelector } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
 import { IMessageData } from '@types/MessageData';
 import { getFormattedDate } from '@utils/functions';
+import { removeChat } from '@redux/actions/chatActions';
 
 interface MessagesBoxProps {
   message: IMessageData;
@@ -18,6 +19,7 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
   const dispatch = useTypedDispatch();
   const { content, chatId, date } = message;
   const { userId, username } = message.user;
+
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="messageInner">
@@ -35,6 +37,7 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
       <Buttons
         handleDeleteModal={toggle}
         handleReply={() => dispatch(setReply(message))}
+        handleKeyDown={() => dispatch(removeChat(chatId))}
       />
       <Modal
         content={content}
