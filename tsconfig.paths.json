@@ -10,7 +10,8 @@
 			"@styles/*": ["src/styles/*"],
 			"@utils/*": ["src/utils/*"],
 			"@redux/*": ["src/redux/*"],
-			"@types/*": ["src/types/*"],
+			// "@types/*": ["src/types/*"],
+			"@models/*": ["src/models/*"],
 		},
 	},
 }

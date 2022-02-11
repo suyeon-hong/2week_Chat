@@ -1,6 +1,6 @@
 import './Style.scss';
 import { Profile, Button, Modal } from '@components/base';
-import useModal from '@components/hooks/useModal';
+import { useModal } from '@hooks';
 
 interface ReplyBoxProps {
   userName: string;

@@ -1,4 +1,4 @@
-import { IMessageData } from '@types/MessageData';
+import { IMessageData } from '@models/MessageData';
 
 export enum ActionType {
   ADD_CHAT = 'ADD_CHAT',
