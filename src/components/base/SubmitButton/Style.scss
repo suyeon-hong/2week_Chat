@@ -4,8 +4,8 @@
   width: 122px;
   border: 1px solid black;
   border-left: none;
-  cursor: default;
-  background: $gray;
+  cursor: not-allowed;
+  background: rgba(gray, 0.3);
   color: $tertiary;
   &.active{
     background: #ffffff;

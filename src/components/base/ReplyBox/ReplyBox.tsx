@@ -33,7 +33,7 @@ const ReplyBox = ({
         Delete
       </Button>
       <Modal
-        userId={userName}
+        chatId={userName}
         content={replyMessage}
         isShowing={isShowing}
         close={toggle}

@@ -15,7 +15,10 @@ const Chats = () => {
     <div className="homeWrapper">
       <div className="messagesContainer">
         {React.Children.toArray(
-          chatList.map((message) => (
+          chatList.sort(
+            (a: IMessageData, b: IMessageData): number =>
+              +new Date(a.date) - +new Date(b.date)
+          ).map((message) => (
             <MessagesBox key={message.chatId} message={message} />
           ))
         )}

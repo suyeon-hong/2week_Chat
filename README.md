@@ -1,10 +1,14 @@
 
 # 목표는 취업이조 2팀
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00d459cf-a8e2-475e-9bc0-7488475737a9/deploy-status)](https://app.netlify.com/sites/2weekchat/deploys)
+
+<br>
 
 ## 🚀 정보
 
 - [배포주소 바로가기](https://2weekchat.netlify.app/)
 - [노션 바로가기](https://sleepy-oxygen-343.notion.site/41970b5fee2d45aebd7b01de061039eb)
+- [figma 바로가기](https://www.figma.com/file/4Cd5n1VVGLrAzlldO6FEEe/Swit?node-id=0%3A1)
 
 <br>
 
@@ -58,6 +62,7 @@ $ yarn start
 #### ✔ 김지영
 - 프로젝트 기초 세팅
 - 공용 SCSS 설정
+- 디자인 통일화
 - 배포
 - `Login 페이지`, `Profile 컴포넌트` 구현
 #### ✔ 고병표
