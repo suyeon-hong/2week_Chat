@@ -4,4 +4,5 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(RootReducer, composeWithDevTools());
 
+export type AppDispatch = typeof store.dispatch;
 export default store;
