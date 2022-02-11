@@ -9,10 +9,10 @@ interface HandleProps {
 const Buttons = ({ handleDeleteModal, handleReply }: HandleProps) => {
   return (
     <div className="button-wrapper">
-      <Button size={'btnSize100'} onClick={handleDeleteModal}>
+      <Button size={'btnSize75'} onClick={handleDeleteModal}>
         delete
       </Button>
-      <Button size={'btnSize100'} onClick={handleReply}>
+      <Button size={'btnSize75'} onClick={handleReply}>
         reply
       </Button>
     </div>

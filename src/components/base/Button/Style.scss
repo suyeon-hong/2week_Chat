@@ -2,18 +2,19 @@
 button.message-button {
 	border: 1px solid black;
 	padding: 10px 15px;
+	margin: 5px 10px;
 
 	:hover {
 		cursor: pointer;
 	}
 
 	&.btnSize75{
-		width: 75px;
-		height: 50px;
+		max-width: 75px;
+		max-height: 50px;
 	}
 
 	&.btnSize100{
-		width: 100px;
-		height: 50px;
+		max-width: 100px;
+		max-height: 50px;
 	}	
 }
