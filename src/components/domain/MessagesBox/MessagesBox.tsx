@@ -1,6 +1,7 @@
 import { Profile, Buttons, Modal } from '@components/base';
 import useModal from '@components/hooks/useModal';
 import { getFormattedDate } from '@utils/functions';
+import { IMessageData } from '@$types/MessageData';
 import './Style.scss';
 
 interface MessagesBoxProps {
