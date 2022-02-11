@@ -3,7 +3,7 @@ import { IMessageData } from '@models/MessageData';
 
 export interface ChatState {
   chatList: IMessageData[];
-  reply: IMessageData | null;
+  replyMessage: IMessageData | null;
 }
 
 const initialState: ChatState = {
@@ -17,6 +17,7 @@ const initialState: ChatState = {
         userId: 'sdf',
         username: 'str',
       },
+      replyId: null,
     },
     {
       chatId: '2',
@@ -27,6 +28,7 @@ const initialState: ChatState = {
         userId: 'sdf',
         username: 'str',
       },
+      replyId: null,
     },
     {
       chatId: '3',
@@ -37,9 +39,10 @@ const initialState: ChatState = {
         userId: 'sdf',
         username: 'str',
       },
+      replyId: null,
     },
   ],
-  reply: null,
+  replyMessage: null,
 };
 
 let chatId = 4;
@@ -50,21 +53,27 @@ export const chatReducer = (
 ): ChatState => {
   switch (type) {
     case ActionType.ADD_CHAT: {
+      const { replyMessage, chatList } = state;
       const { content, user } = payload as {
         content: string;
         user: { userId: string; username: string };
       };
+
+      const replyId = replyMessage?.chatId ? replyMessage?.chatId : null;
+
       const nextMessage: IMessageData = {
         content,
         user,
         date: new Date(),
         chatId: (chatId++).toString(),
         profileImage: undefined,
+        replyId,
       };
+
       return {
         ...state,
-        chatList: [...state.chatList, nextMessage],
-        reply: null,
+        chatList: [...chatList, nextMessage],
+        replyMessage: null,
       };
     }
     case ActionType.DELETE_CHAT: {
@@ -74,7 +83,7 @@ export const chatReducer = (
       return { ...state, chatList: nextChatList };
     }
     case ActionType.SET_REPLY_MODE: {
-      return { ...state, reply: payload as IMessageData };
+      return { ...state, replyMessage: payload as IMessageData };
     }
     default:
       return state;

@@ -14,9 +14,12 @@ interface MessagesBoxProps {
 const MessagesBox = ({ message }: MessagesBoxProps) => {
   const { isShowing, toggle } = useModal(false);
   const { username: loginUsername } = useTypedSelector((state) => state.user);
+  const { chatList } = useTypedSelector((state) => state.chat);
   const dispatch = useTypedDispatch();
-  const { content, chatId, date } = message;
+  const { content, chatId, date, replyId } = message;
   const { userId, username } = message.user;
+  const replyMessage = chatList.find((message) => message.chatId === replyId);
+
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="messageInner">
