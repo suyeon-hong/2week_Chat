@@ -22,6 +22,12 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
       <div className="messageInner">
         <Profile userId={userId} />
         <div className="content">
+          {replyMessage && (
+            <>
+              <h1>{replyMessage.user.username}에게 답장</h1>
+              <p className="otherMessage">'{replyMessage.content}'</p>
+            </>
+          )}
           <p className="nameDate">
             <strong>
               {username === loginUsername ? `*${username}` : `${username}`}
