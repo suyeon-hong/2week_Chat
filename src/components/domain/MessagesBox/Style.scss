@@ -1,5 +1,5 @@
 .messageBox {
-  @include flexbox();
+  @include flexbox;
   border-top: 1px solid $border;
   border-bottom: 1px solid $border;
   margin: $BASE_GAP * 2 0;
@@ -10,7 +10,6 @@
   }
 
   &:last-of-type {
-    border-bottom: none;
     margin-bottom: 0;
   }
 
@@ -35,7 +34,7 @@
       }
 
       .message{
-        
+        word-break: break-word;
         background-color: rgba($gray, 0.3);
       }
     }

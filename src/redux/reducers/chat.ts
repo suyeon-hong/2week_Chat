@@ -1,5 +1,5 @@
 import { Action, ActionType } from '../actions/chatActions';
-import { IMessageData } from '@types/MessageData';
+import { IMessageData } from '@models/MessageData';
 
 export interface ChatState {
   chatList: IMessageData[];

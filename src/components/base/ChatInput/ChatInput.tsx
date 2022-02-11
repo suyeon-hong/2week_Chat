@@ -1,8 +1,8 @@
 import './Style.scss';
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import { useTypedDispatch, useTypedSelector } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
-import { InputEventType, KeyCodeType } from '@types/EventTypes';
+import { InputEventType, KeyCodeType } from '@models/EventTypes';
 
 interface ChatInputProps {
   inputValue: string;
@@ -24,7 +24,7 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
   const handleClick = () => {
     dispatch(setReply(null));
   };
-  const handleKeyPress = (e: any) => {
+  const handleKeyPress = (e: KeyboardEvent) => {
     const isPressShift = e.shiftKey;
     const keyCode = e.code;
 
