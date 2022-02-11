@@ -25,8 +25,8 @@ const ReplyBox = ({
       <div className="messageBox">
         <div>
           <h1>{userName}에게 답장</h1>
-          <p className="other">'{receiveCon}'</p>
-          <p className="mine">{replyMessage}</p>
+          <p className="otherMessage">'{receiveCon}'</p>
+          <p className="myMessage">{replyMessage}</p>
         </div>
       </div>
       <Button size="btnSize100" onClick={toggle}>
