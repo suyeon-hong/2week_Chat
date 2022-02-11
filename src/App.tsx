@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Chats, Login } from '@pages';
+import '@styles/index.scss';
 
 function App() {
   return (

@@ -1,0 +1,24 @@
+.replyBoxWrapper{
+	width: 100%;
+	padding: 20px;
+	border: 1px solid #000;
+	@include flexbox($jc: between)
+
+}
+
+.messageBox{
+	h1{
+		@include font;
+		margin: 0;
+	}
+	.otherMessage{
+		@include font($sz: 14px ,$color: $gray);
+		margin: 5px 0 10px;
+	}
+	.myMessage{
+		@include font;
+		border-top: 1px solid $border;
+		padding-top: 10px;
+		margin: 0;
+	}
+}

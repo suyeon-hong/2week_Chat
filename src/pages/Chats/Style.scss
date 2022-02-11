@@ -1,1 +1,17 @@
-// Style.scss
+.homeWrapper{
+	position: relative;
+  width: 100%;
+  padding: 30px 15px;
+
+  .messagesContainer{
+    border: 1px solid $border;
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .inputBoxContainer{
+    display: flex;
+    border: 1px solid $border;
+    margin-top: 30px;
+  }
+}
