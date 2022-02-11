@@ -4,5 +4,5 @@ export interface IMessageData {
   userName: string;
   profileImage: string | undefined;
   content: string;
-  date: string | Date;
+  date: Date;
 }
