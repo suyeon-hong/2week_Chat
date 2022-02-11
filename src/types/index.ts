@@ -1,12 +1,10 @@
 // @공통 type 정의
 
-export interface UserData {
+export interface User {
   userId: string;
-  userName: string;
-  chatId: number;
-  content: string;
-  date: Date;
+  username: string;
 }
+
 export enum KeyCodeType {
   NumpadEnter = 'NumpadEnter',
   Enter = 'Enter',

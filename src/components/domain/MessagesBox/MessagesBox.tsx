@@ -14,13 +14,14 @@ const MessagesBox = ({
   handleDeleteModal,
   handleReply,
 }: MessagesBoxProps) => {
+  const { userId, username } = message.user;
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="message">
-        <Profile userId={message.userId} />
+        <Profile userId={userId} />
         <div className="content">
           <p className="nameDate">
-            {message.userName} {message.date}
+            {username} {message.date}
           </p>
           <p className="content">{message.content}</p>
         </div>

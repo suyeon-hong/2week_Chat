@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import { MouseEvent, useState } from 'react';
 import './Style.scss';
-import { UserData } from '@types';
 
 const mokData = [
   {
@@ -34,7 +33,7 @@ interface ModalProps {
 }
 
 const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
-  const [data, setData] = useState<UserData[]>(mokData);
+  // const [data, setData] = useState<UserData[]>(mokData);
 
   let userContent = content;
   if (userContent.length > 10) {
@@ -42,7 +41,7 @@ const Modal = ({ userId, content, isShowing, close }: ModalProps) => {
   }
 
   const onRemove = (event: MouseEvent) => {
-    setData((data) => data.filter((data) => data.userId !== userId));
+    // setData((data) => data.filter((data) => data.userId !== userId));
     close(event);
   };
 
