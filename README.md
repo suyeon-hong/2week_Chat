@@ -69,7 +69,9 @@ $ yarn start
 - `Botton 컴포넌트`, `Bottons 컴포넌트` 구현
 - `Chats 페이지`, `MessageBox 컴포넌트` 구현
 #### ✔ 유제호
-
+- `ChatInput (채팅 인풋)컴포넌트 구현`
+- 메세지 전송, 답글, 삭제 기능 구현
+- redux 전역 상태관리 담당
 #### ✔ 홍수연
 - `Modal` `replyBox` 컴포넌트 구현
 
