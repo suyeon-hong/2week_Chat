@@ -25,6 +25,7 @@ module.exports = override(
         options: {
           resources: [
             './src/styles/constants/_colors.scss',
+            './src/styles/constants/_sizes.scss',
             './src/styles/mixins/_flexbox.scss',
             './src/styles/mixins/_font.scss',
             './src/styles/mixins/_position.scss',
