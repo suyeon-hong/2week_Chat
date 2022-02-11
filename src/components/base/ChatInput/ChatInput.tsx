@@ -11,7 +11,7 @@ interface ChatInputProps {
 }
 
 const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
-  const { reply } = useTypedSelector(({ chat }) => chat);
+  const { replyMessage } = useTypedSelector(({ chat }) => chat);
   const dispatch = useTypedDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -42,12 +42,13 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
 
   return (
     <div className={'ChatInput-wrapper'}>
-      {reply && (
+      {replyMessage && (
         <div className={'reply-container'}>
           <h5>
-            '{reply.user.username}' <span className={'to-text'}>에게 답장</span>
+            '{replyMessage.user.username}'{' '}
+            <span className={'to-text'}>에게 답장</span>
           </h5>
-          <p className={'reply-content'}>{reply.content}</p>
+          <p className={'reply-content'}>{replyMessage.content}</p>
           <div className="close-button" onClick={handleClick}>
             x
           </div>

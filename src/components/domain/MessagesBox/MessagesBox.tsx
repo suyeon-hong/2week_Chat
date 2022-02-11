@@ -14,15 +14,23 @@ interface MessagesBoxProps {
 const MessagesBox = ({ message }: MessagesBoxProps) => {
   const { isShowing, toggle } = useModal(false);
   const { username: loginUsername } = useTypedSelector((state) => state.user);
+  const { chatList } = useTypedSelector((state) => state.chat);
   const dispatch = useTypedDispatch();
-  const { content, chatId, date } = message;
+  const { content, chatId, date, replyId } = message;
   const { userId, username } = message.user;
-
+  const replyMessage = chatList.find((message) => message.chatId === replyId);
+  
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="messageInner">
         <Profile userId={userId} />
         <div className="content">
+          {replyMessage && (
+            <>
+              <h1>{replyMessage.user.username}에게 답장</h1>
+              <p className="otherMessage">'{replyMessage.content}'</p>
+            </>
+          )}
           <p className="nameDate">
             <strong>
               {username === loginUsername ? `*${username}` : `${username}`}

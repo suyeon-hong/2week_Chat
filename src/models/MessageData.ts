@@ -8,4 +8,5 @@ export interface IMessageData {
   content: string;
   date: Date;
   user: User;
+  replyId: string | null;
 }

@@ -3,46 +3,71 @@ import { IMessageData } from '@models/MessageData';
 
 export interface ChatState {
   chatList: IMessageData[];
-  reply: IMessageData | null;
+  replyMessage: IMessageData | null;
 }
 
 const initialState: ChatState = {
   chatList: [
     {
       chatId: '1',
-      profileImage: '123',
-      content: '1',
+      profileImage: '121',
+      content: '환영합니다.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '3',
+        username: '김예림',
       },
+      replyId: null,
     },
     {
       chatId: '2',
-      profileImage: '123',
-      content: '123',
+      profileImage: '113',
+      content: '반갑니다.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '4',
+        username: '고병표',
       },
+      replyId: null,
     },
     {
       chatId: '3',
-      profileImage: '123',
-      content: '123',
+      profileImage: '555',
+      content: '안녕하세요.',
       date: new Date(),
       user: {
-        userId: 'sdf',
-        username: 'str',
+        userId: '5',
+        username: '김지영',
       },
+      replyId: null,
+    },
+    {
+      chatId: '4',
+      profileImage: '2',
+      content: '.',
+      date: new Date(),
+      user: {
+        userId: '6',
+        username: '유제호',
+      },
+      replyId: null,
+    },
+    {
+      chatId: '5',
+      profileImage: '40',
+      content: 'Hello',
+      date: new Date(),
+      user: {
+        userId: '22',
+        username: '홍수연',
+      },
+      replyId: null,
     },
   ],
-  reply: null,
+  replyMessage: null,
 };
 
-let chatId = 4;
+let chatId = 6;
 
 export const chatReducer = (
   state = initialState,
@@ -50,21 +75,27 @@ export const chatReducer = (
 ): ChatState => {
   switch (type) {
     case ActionType.ADD_CHAT: {
+      const { replyMessage, chatList } = state;
       const { content, user } = payload as {
         content: string;
         user: { userId: string; username: string };
       };
+
+      const replyId = replyMessage?.chatId ? replyMessage?.chatId : null;
+
       const nextMessage: IMessageData = {
         content,
         user,
         date: new Date(),
         chatId: (chatId++).toString(),
         profileImage: undefined,
+        replyId,
       };
+
       return {
         ...state,
-        chatList: [...state.chatList, nextMessage],
-        reply: null,
+        chatList: [...chatList, nextMessage],
+        replyMessage: null,
       };
     }
     case ActionType.DELETE_CHAT: {
@@ -74,7 +105,7 @@ export const chatReducer = (
       return { ...state, chatList: nextChatList };
     }
     case ActionType.SET_REPLY_MODE: {
-      return { ...state, reply: payload as IMessageData };
+      return { ...state, replyMessage: payload as IMessageData };
     }
     default:
       return state;
