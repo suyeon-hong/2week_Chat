@@ -2,6 +2,9 @@
 	width: 100%;
 	height: 100vh;
 	background: rgba(0,0,0,0.2);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .modalBox{
@@ -22,6 +25,7 @@
 		display: inline-block;
 		padding: 5px 10px;
 		background: $gray;
+		border: none;
 		border-radius: 5px;
 		margin-right: 10px;
 		transition: .4s;
