@@ -13,10 +13,14 @@ const initialState = {
 export const userReducer = (
   state = initialState,
   { type, payload }: Action
-) => {
+): UserState => {
   switch (type) {
     case ActionType.LOGIN_USER: {
-      return { ...state, ...payload, userId: Math.floor(Math.random() * 100) };
+      return {
+        ...state,
+        ...payload,
+        userId: Math.floor(Math.random() * 100).toString(),
+      };
     }
     default: {
       return state;

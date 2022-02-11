@@ -47,7 +47,7 @@ let chatId = 4;
 export const chatReducer = (
   state = initialState,
   { type, payload }: Action
-) => {
+): ChatState => {
   switch (type) {
     case ActionType.ADD_CHAT: {
       const { content, user } = payload as {
@@ -61,7 +61,7 @@ export const chatReducer = (
         chatId: (chatId++).toString(),
         profileImage: undefined,
       };
-
+      console.log(state.chatList);
       return { ...state, chatList: [...state.chatList, nextMessage] };
     }
     case ActionType.DELETE_CHAT: {
@@ -72,7 +72,7 @@ export const chatReducer = (
       return { ...state, ...nextChatList };
     }
     case ActionType.SET_REPLY_MODE: {
-      return { ...state, reply: payload };
+      return { ...state, reply: payload as IMessageData };
     }
     default:
       return state;
