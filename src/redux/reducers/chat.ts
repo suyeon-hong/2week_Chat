@@ -1,5 +1,5 @@
 import { Action, ActionType } from '../actions/chatActions';
-import { IMessageData } from '@models/MessageData';
+import { IMessageData } from '@types/MessageData';
 
 export interface ChatState {
   chatList: IMessageData[];
@@ -12,7 +12,7 @@ const initialState: ChatState = {
       chatId: '1',
       profileImage: '123',
       content: '1',
-      date: '123',
+      date: new Date(),
       user: {
         userId: 'sdf',
         username: 'str',
@@ -22,7 +22,7 @@ const initialState: ChatState = {
       chatId: '2',
       profileImage: '123',
       content: '123',
-      date: '123',
+      date: new Date(),
       user: {
         userId: 'sdf',
         username: 'str',
@@ -32,7 +32,7 @@ const initialState: ChatState = {
       chatId: '3',
       profileImage: '123',
       content: '123',
-      date: '123',
+      date: new Date(),
       user: {
         userId: 'sdf',
         username: 'str',
@@ -61,7 +61,11 @@ export const chatReducer = (
         chatId: (chatId++).toString(),
         profileImage: undefined,
       };
-      return { ...state, chatList: [...state.chatList, nextMessage] };
+      return {
+        ...state,
+        chatList: [...state.chatList, nextMessage],
+        reply: null,
+      };
     }
     case ActionType.DELETE_CHAT: {
       const nextChatList = state.chatList.filter(

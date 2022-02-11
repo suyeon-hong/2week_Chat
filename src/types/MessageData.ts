@@ -1,6 +1,6 @@
-export interface User = {
+export interface User {
   userId: string;
-  username:string;
+  username: string;
 }
 export interface IMessageData {
   chatId: string;

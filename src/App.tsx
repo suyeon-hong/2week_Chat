@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        {/*<Route path="chat" element={<Login />} />*/}
+        <Route path="chat" element={<Chats />} />
       </Routes>
     </BrowserRouter>
   );
