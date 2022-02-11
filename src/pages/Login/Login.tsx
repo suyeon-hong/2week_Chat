@@ -1,9 +1,17 @@
-import { useInput } from '@hooks';
+import { useInput, useTypedDispatch } from '@hooks';
 import './Style.scss';
+import { loginUser } from '@redux/actions/userTypes';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const { inputValue, onChangeInput, onSubmit } = useInput();
+  const navigate = useNavigate();
+  const dispatch = useTypedDispatch();
 
+  const handleClick = () => {
+    dispatch(loginUser({ username: inputValue }));
+    navigate('/chat');
+  };
   return (
     <form className="loginForm" onSubmit={onSubmit}>
       <div className="formInner">
@@ -17,7 +25,9 @@ const Login = () => {
           required
           onChange={onChangeInput}
         />
-        <button className="loginBtn">대화하러 가기</button>
+        <button className="loginBtn" onClick={handleClick}>
+          대화하러 가기
+        </button>
       </div>
     </form>
   );
