@@ -1,5 +1,6 @@
-import { Profile, Buttons } from '@components/base';
 import { IMessageData } from '@$types/MessageData';
+import { Profile, Buttons } from '@components/base';
+import { getFormattedDate } from '@utils/functions';
 import './Style.scss';
 
 interface MessagesBoxProps {
@@ -14,14 +15,15 @@ const MessagesBox = ({
   handleReply,
 }: MessagesBoxProps) => {
   return (
-    <div className="messageBox" key={message.chatId}>
-      <div className="message">
+    <div className="messageBox">
+      <div className="messageInner">
         <Profile userId={message.userId} />
         <div className="content">
           <p className="nameDate">
-            {message.userName} {message.date}
+            <strong>{message.userName}</strong>
+            <span className="date"> {getFormattedDate(message.date)}</span>
           </p>
-          <p className="content">{message.content}</p>
+          <p className="message">{message.content}</p>
         </div>
       </div>
       <Buttons
