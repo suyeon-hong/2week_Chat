@@ -16,7 +16,6 @@ module.exports = override(
     '@utils': path.resolve(__dirname, 'src/utils'),
     '@types': path.resolve(__dirname, 'src/types'),
     '@redux': path.resolve(__dirname, 'src/redux'),
-    '@models': path.resolve(__dirname, 'src/models'),
   }),
   adjustStyleLoaders((rule) => {
     if (rule.test.toString().includes('scss')) {
