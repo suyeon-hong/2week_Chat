@@ -19,9 +19,9 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
   const { content, chatId, date, replyId } = message;
   const { userId, username } = message.user;
   const replyMessage = chatList.find((message) => message.chatId === replyId);
-  
+
   return (
-    <div className="messageBox" key={message.chatId}>
+    <div className="messageBox">
       <div className="messageInner">
         <Profile userId={userId} />
         <div className="content">
