@@ -1,8 +1,9 @@
+
 # 목표는 취업이조 2팀
 
 ## 🚀 정보
 
-- [배포주소 바로가기](https://requestaquotedashboard.herokuapp.com)
+- [배포주소 바로가기](https://2weekchat.netlify.app)
 - [노션 바로가기](https://sleepy-oxygen-343.notion.site/41970b5fee2d45aebd7b01de061039eb)
 
 <br>
@@ -47,24 +48,21 @@ $ yarn start
 
 
 <br>
+<br>
 
-### 📝 기능 목록 명세
 
+## 📝 기능 목록 명세
 #### ✔ 김지영
-
-
+- 프로젝트 기초 세팅
+- 공용 SCSS 설정
+- 배포
+- `Login 페이지`, `Profile 컴포넌트` 구현
 #### ✔ 고병표
-
 
 #### ✔ 유제호
 
-
 #### ✔ 홍수연
-
-
-<br>
-<br>
-
+- `Modal` `replyBox` 컴포넌트 구현
 
 <br>
 
