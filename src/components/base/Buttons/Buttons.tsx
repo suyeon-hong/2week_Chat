@@ -3,7 +3,7 @@ import './Style.scss';
 
 interface HandleProps {
   handleDeleteModal(e: React.MouseEvent<HTMLButtonElement>): void;
-  handleReply: any;
+  handleReply: () => void;
 }
 
 const Buttons = ({ handleDeleteModal, handleReply }: HandleProps) => {
