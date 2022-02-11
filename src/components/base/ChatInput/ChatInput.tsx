@@ -1,6 +1,6 @@
 import './Style.scss';
 import React, { useState } from 'react';
-import { InputEventType, KeyCodeType } from '@$types/EventTypes';
+import { InputEventType, KeyCodeType } from '@types';
 
 const dummy = {
   userId: 1,
@@ -51,28 +51,26 @@ const ChatInput = ({ setInputValue, inputValue, onSubmit }: ChatInputProps) => {
   };
 
   return (
-    <>
-      <div className={'ChatInput-wrapper'}>
-        {replyMode && (
-          <div className={'reply-container'}>
-            <h5>
-              '{userName}' <span className={'to-text'}>에게 답장</span>
-            </h5>
-            <p className={'reply-content'}>{content}</p>
-            <div className="close-button" onClick={handleClick}>
-              x
-            </div>
+    <div className={'ChatInput-wrapper'}>
+      {replyMode && (
+        <div className={'reply-container'}>
+          <h5>
+            '{userName}' <span className={'to-text'}>에게 답장</span>
+          </h5>
+          <p className={'reply-content'}>{content}</p>
+          <div className="close-button" onClick={handleClick}>
+            x
           </div>
-        )}
-        <textarea
-          name="chat-input"
-          id="chat-input"
-          value={inputValue}
-          onKeyPress={handleKeyPress}
-          onChange={handleChange}
-        />
-      </div>
-    </>
+        </div>
+      )}
+      <textarea
+        name="chat-input"
+        id="chat-input"
+        value={inputValue}
+        onKeyPress={handleKeyPress}
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 

@@ -11,7 +11,7 @@
 			"@utils/*": ["src/utils/*"],
 			"@redux/*": ["src/redux/*"],
 			"@models/*": ["src/models/*"],
-			"@$types/*": ["src/types/*"],
+			"@types/*": ["src/types/*"],
 		},
 	},
 }
