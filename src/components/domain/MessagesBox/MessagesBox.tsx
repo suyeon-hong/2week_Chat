@@ -6,7 +6,6 @@ import { useTypedDispatch, useTypedSelector, useModal } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
 import { IMessageData } from '@models/MessageData';
 import { getFormattedDate } from '@utils/functions';
-import { removeChat } from '@redux/actions/chatActions';
 
 interface MessagesBoxProps {
   message: IMessageData;
@@ -36,7 +35,6 @@ const MessagesBox = ({ message }: MessagesBoxProps) => {
       <Buttons
         handleDeleteModal={toggle}
         handleReply={() => dispatch(setReply(message))}
-        handleKeyDown={() => dispatch(removeChat(chatId))}
       />
       <Modal
         content={content}

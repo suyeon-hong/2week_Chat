@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, KeyboardEvent } from 'react';
 import './Style.scss';
 
 type size = 'btnSize75' | 'btnSize100';
@@ -7,21 +7,12 @@ interface Props {
   size: size;
   children: string;
   onClick(e: React.MouseEvent<HTMLButtonElement>): void;
-  onKeyDown?: () => void;
 }
 
-const Button = ({
-  size,
-  children,
-  onClick,
-  onKeyDown,
-}: Props): ReactElement => {
+const Button = ({ size, children, onClick }: Props): ReactElement => {
   return (
     <>
-      <button
-        className={`message-button ${size}`}
-        onKeyDown={onKeyDown}
-        onClick={onClick}>
+      <button className={`message-button ${size}`} onClick={onClick}>
         {children}
       </button>
     </>
