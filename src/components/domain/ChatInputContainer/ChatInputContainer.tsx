@@ -1,13 +1,18 @@
 import './Style.scss';
 import { ChatInput, SubmitButton } from '@components/base';
 import { useState } from 'react';
+import { useTypedDispatch, useTypedSelector } from '@hooks';
+import { addChat } from '@redux/actions/chatActions';
 
-const ChatContainer = () => {
+const ChatInputContainer = () => {
   const [inputValue, setInputValue] = useState('');
+  const { chat, user } = useTypedSelector((state) => state);
+  const dispatch = useTypedDispatch();
   const isNotEmpty = !!inputValue.length;
+
   const handleSubmit = () => {
     if (isNotEmpty) {
-      console.log(inputValue, '가 전송됨');
+      dispatch(addChat(inputValue, user));
       setInputValue('');
     }
   };
@@ -28,4 +33,4 @@ const ChatContainer = () => {
   );
 };
 
-export default ChatContainer;
+export default ChatInputContainer;

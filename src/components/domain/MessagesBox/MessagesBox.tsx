@@ -1,34 +1,46 @@
-import { Profile, Buttons, Modal } from '@components/base';
-import useModal from '@components/hooks/useModal';
-import { getFormattedDate } from '@utils/functions';
+import { Profile, Buttons } from '@components/base';
+
 import './Style.scss';
+import Modal from '../../base/Modal/Modal';
+import useModal from '@components/hooks/useModal';
+import { useTypedDispatch, useTypedSelector } from '@hooks';
+import { setReply } from '@redux/actions/chatActions';
+import { IMessageData } from '@types/MessageData';
+import { getFormattedDate } from '@utils/functions';
 
 interface MessagesBoxProps {
   message: IMessageData;
-  handleReply(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const MessagesBox = ({ message, handleReply }: MessagesBoxProps) => {
-  const { isShowing, toggle: close } = useModal(false);
-
+const MessagesBox = ({ message }: MessagesBoxProps) => {
+  const { isShowing, toggle } = useModal(false);
+  const { username: loginUsername } = useTypedSelector((state) => state.user);
+  const dispatch = useTypedDispatch();
+  const { content, chatId, date } = message;
+  const { userId, username } = message.user;
   return (
-    <div className="messageBox">
-      <div className="messageInner">
-        <Profile userId={message.userId} />
+    <div className="messageBox" key={message.chatId}>
+      <div className="message">
+        <Profile userId={userId} />
         <div className="content">
           <p className="nameDate">
-            <strong>{message.userName}</strong>
-            <span className="date"> {getFormattedDate(message.date)}</span>
+            <strong>
+              {username === loginUsername ? `*${username}` : `${username}`}
+            </strong>
+            <span className="date"> {getFormattedDate(date)}</span>
           </p>
-          <p className="message">{message.content}</p>
+          <p className="content">{content}</p>
         </div>
       </div>
-      <Buttons handleDeleteModal={close} handleReply={handleReply} />
+      <Buttons
+        handleDeleteModal={toggle}
+        handleReply={() => dispatch(setReply(message))}
+      />
       <Modal
-        chatId={message.chatId}
-        content={message.content}
+        content={content}
+        chatId={chatId}
+        close={toggle}
         isShowing={isShowing}
-        close={close}
       />
     </div>
   );
