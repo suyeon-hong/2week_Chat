@@ -1,9 +1,8 @@
 import { Profile, Buttons } from '@components/base';
 
 import './Style.scss';
-import Modal from '../../base/Modal/Modal';
-import useModal from '@components/hooks/useModal';
-import { useTypedDispatch, useTypedSelector } from '@hooks';
+import { Modal } from '@components/base';
+import { useTypedDispatch, useTypedSelector, useModal } from '@hooks';
 import { setReply } from '@redux/actions/chatActions';
 import { IMessageData } from '@types/MessageData';
 import { getFormattedDate } from '@utils/functions';
