@@ -62,7 +62,7 @@ $ yarn start
 - `Login 페이지`, `Profile 컴포넌트` 구현
 #### ✔ 고병표
 - `Botton 컴포넌트`, `Bottons 컴포넌트` 구현
-- `Chats 페이지`, `MessageBox` 컴포넌트 구현
+- `Chats 페이지`, `MessageBox 컴포넌트` 구현
 #### ✔ 유제호
 
 #### ✔ 홍수연
