@@ -1,19 +1,17 @@
-import { Profile, Buttons } from '@components/base';
+import { Profile, Buttons, Modal } from '@components/base';
+import useModal from '@components/hooks/useModal';
 import { IMessageData } from '@models/MessageData';
 
 import './Style.scss';
 
 interface MessagesBoxProps {
   message: IMessageData;
-  handleDeleteModal(e: React.MouseEvent<HTMLButtonElement>): void;
   handleReply(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const MessagesBox = ({
-  message,
-  handleDeleteModal,
-  handleReply,
-}: MessagesBoxProps) => {
+const MessagesBox = ({ message, handleReply }: MessagesBoxProps) => {
+  const { isShowing, toggle: close } = useModal(false);
+
   return (
     <div className="messageBox" key={message.chatId}>
       <div className="message">
@@ -25,9 +23,12 @@ const MessagesBox = ({
           <p className="content">{message.content}</p>
         </div>
       </div>
-      <Buttons
-        handleDeleteModal={handleDeleteModal}
-        handleReply={handleReply}
+      <Buttons handleDeleteModal={close} handleReply={handleReply} />
+      <Modal
+        chatId={message.chatId}
+        content={message.content}
+        isShowing={isShowing}
+        close={close}
       />
     </div>
   );

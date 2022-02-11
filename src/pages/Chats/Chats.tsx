@@ -16,9 +16,6 @@ const messages = [
 ];
 
 const Chats = () => {
-  function handleDeleteModal() {
-    console.log('handleDeleteModal');
-  }
   function handleReply() {
     console.log('handleReply');
   }
@@ -31,7 +28,6 @@ const Chats = () => {
             <MessagesBox
               key={message.chatId}
               message={message}
-              handleDeleteModal={handleDeleteModal}
               handleReply={handleReply}
             />
           ))
