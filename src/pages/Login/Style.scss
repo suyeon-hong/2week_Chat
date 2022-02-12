@@ -6,7 +6,7 @@
 	.formInner {
 		@include pos-center;
 		@include flexbox($fd: column);
-		top: 40%;
+		top: 35%;
 		width: 100%;
 		padding: $BASE_GAP;
 
