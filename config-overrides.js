@@ -14,7 +14,6 @@ module.exports = override(
     '@hooks': path.resolve(__dirname, 'src/hooks'),
     '@styles': path.resolve(__dirname, 'src/styles'),
     '@utils': path.resolve(__dirname, 'src/utils'),
-    // '@types': path.resolve(__dirname, 'src/types'),
     '@models': path.resolve(__dirname, 'src/models'),
     '@redux': path.resolve(__dirname, 'src/redux'),
   }),
@@ -26,9 +25,11 @@ module.exports = override(
           resources: [
             './src/styles/constants/_colors.scss',
             './src/styles/constants/_sizes.scss',
+            './src/styles/constants/_breakpoints.scss',
             './src/styles/mixins/_flexbox.scss',
             './src/styles/mixins/_font.scss',
             './src/styles/mixins/_position.scss',
+            './src/styles/mixins/_responsive.scss',
           ],
         },
       });

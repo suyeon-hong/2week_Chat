@@ -1,0 +1,7 @@
+@mixin responsive($screen) {
+  @if ($screen == 'md') {
+    @media screen and (max-width: $md-breakpoint) {
+      @content;
+    }
+  }
+}
