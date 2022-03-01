@@ -1,19 +1,12 @@
 
 # 목표는 취업이조 2팀
-[![Netlify Status](https://api.netlify.com/api/v1/badges/00d459cf-a8e2-475e-9bc0-7488475737a9/deploy-status)](https://app.netlify.com/sites/2weekchat/deploys)
-
-<br>
-
-## 🚀 정보
-
-- [배포주소 바로가기](https://2weekchat.netlify.app/)
-- [노션 바로가기](https://sleepy-oxygen-343.notion.site/41970b5fee2d45aebd7b01de061039eb)
-- [figma 바로가기](https://www.figma.com/file/4Cd5n1VVGLrAzlldO6FEEe/Swit?node-id=0%3A1)
+👉 [배포주소 바로가기](https://2weekchat.netlify.app/)<br>
+👉 [회고록 바로가기](https://velog.io/@suyeon-hong/%EC%9B%90%ED%8B%B0%EB%93%9C%ED%94%84%EB%A6%AC%EC%98%A8%EB%B3%B4%EB%94%A9%EC%BD%94%EC%8A%A4-2%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0-2)
 
 <br>
 
 
-## 👀 프로젝트 빌드 및 실행 방법
+### 👀 프로젝트 빌드 및 실행 방법
 
 1. 상단 `Code` 버튼을 눌러 레포지토리를 클론 받습니다.
 
@@ -49,7 +42,7 @@ $ yarn start
 <br>
 
 
-## 📝 기능 목록 명세
+### 📝 기능 목록 명세
 #### ✔ 김지영
 - 프로젝트 기초 세팅
 - 공용 SCSS 설정
@@ -68,7 +61,7 @@ $ yarn start
 
 <br>
 
-## 📈 디렉토리 구조
+### 📈 디렉토리 구조
 ```
 .
 ├── README.md
